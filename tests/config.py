@@ -1,2 +1,0 @@
-TEST_USER_EMAIL = "qa_user_2@gmail.com"
-TEST_USER_PASSWORD = "1234"

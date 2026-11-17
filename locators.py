@@ -135,16 +135,8 @@ BTN_PUBLISH_LISTING = (By.XPATH,
 # Заголовок блока «Мои объявления»
 TITLE_MY_LISTINGS = (By.XPATH, "//h1[normalize-space()='Мои объявления']")
 
-# Контейнер блока «Мои объявления»
-BLOCK_MY_LISTINGS = (By.XPATH,
-    "//div[starts-with(@class,'profilePage_listningBlock__')]")
-
 # Пустое состояние блока
 TXT_MY_LISTINGS_EMPTY = (By.XPATH, "//h2[normalize-space()='Здесь пока пусто...']")
-
-# Карточка объявления внутри блока «Мои объявления»
-CARD_LISTING_IN_PROFILE = (By.XPATH,
-    "//div[starts-with(@class,'profilePage_listningBlock__')]//div[contains(@class,'card')]")   
 
 # Блок «Мои объявления» 
 BLOCK_MY_LISTINGS = (By.XPATH,
@@ -162,5 +154,3 @@ BTN_MY_LISTINGS_PAGINATION_NEXT = (By.XPATH,
     "//div[starts-with(@class,'profilePage_listningBlock__')]"
     "[.//h1[normalize-space()='Мои объявления']]"
     "//button[contains(@class,'arrowButton--right')]")
-
-BTN_MY_LISTINGS_PAGINATION_NEXT = (By.XPATH, "//button[contains(@class, 'arrowButton--right')]")
