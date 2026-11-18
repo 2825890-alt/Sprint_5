@@ -28,6 +28,10 @@ class TestLogin:
         login(driver, wait, email, password)
 
         wait.until(EC.url_to_be(MAIN_PAGE_URL))
+        assert driver.current_url == MAIN_PAGE_URL, (
+            f"URL после входа: ожидался '{MAIN_PAGE_URL}',"
+            f" получен '{driver.current_url}'"
+        )
 
     def test_successful_login_shows_user_data_in_header(self, driver, wait):
         """Успешный вход: в правом верхнем углу рядом с кнопкой

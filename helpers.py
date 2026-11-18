@@ -28,6 +28,11 @@ def get_unique_email():
     return f"user_{uuid.uuid4().hex[:8]}@gmail.com"
 
 
+def get_unique_listing_title():
+    """Генерирует уникальное название для нового объявления."""
+    return f"Новый товар {uuid.uuid4()}"
+
+
 def open_registration_form(driver, wait):
     """Открывает попап «Вход и регистрация» и переходит к форме «Зарегистрироваться»."""
     driver.find_element(*BTN_LOGIN_AND_REGISTER).click()

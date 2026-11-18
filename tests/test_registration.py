@@ -39,6 +39,10 @@ class TestRegistration:
         )
 
         wait.until(EC.url_to_be(MAIN_PAGE_URL))
+        assert driver.current_url == MAIN_PAGE_URL, (
+            f"URL после регистрации: ожидался '{MAIN_PAGE_URL}',"
+            f" получен '{driver.current_url}'"
+        )
 
     def test_new_user_registration_shows_user_data_in_header(self, driver, wait):
         """Успешная регистрация: в правом верхнем углу рядом с кнопкой

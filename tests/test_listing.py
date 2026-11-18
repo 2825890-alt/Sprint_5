@@ -1,12 +1,12 @@
-import uuid
-
 from selenium.webdriver.support import expected_conditions as EC
 
 from config import (
     EXPECTED_AUTH_MODAL_TITLE,
+    LISTING_DESCRIPTION,
+    LISTING_PRICE,
     PROFILE_PAGE_URL,
 )
-from helpers import find_created_listing, register_new_user
+from helpers import find_created_listing, get_unique_listing_title, register_new_user
 from locators import (
     BTN_CREATE_LISTING,
     BTN_PUBLISH_LISTING,
@@ -23,9 +23,6 @@ from locators import (
     TITLE_CREATE_LISTING,
     TITLE_MY_LISTINGS,
 )
-
-LISTING_DESCRIPTION = "Хороший товар"
-LISTING_PRICE = "600"
 
 
 class TestCreateListing:
@@ -53,7 +50,7 @@ class TestCreateListing:
         wait.until(EC.element_to_be_clickable(BTN_CREATE_LISTING)).click()
         wait.until(EC.visibility_of_element_located(TITLE_CREATE_LISTING))
 
-        listing_title = f"Новый товар {uuid.uuid4()}"
+        listing_title = get_unique_listing_title()
         driver.find_element(*INPUT_LISTING_TITLE).send_keys(listing_title)
         driver.find_element(*INPUT_LISTING_DESCRIPTION).send_keys(LISTING_DESCRIPTION)
         driver.find_element(*INPUT_LISTING_PRICE).send_keys(LISTING_PRICE)

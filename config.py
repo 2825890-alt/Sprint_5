@@ -18,3 +18,7 @@ TEST_USER_PASSWORD = "1234"
 EXPECTED_USER_NAME = "User."
 EXPECTED_ERROR_MESSAGE = "Ошибка"
 EXPECTED_AUTH_MODAL_TITLE = "Чтобы разместить объявление, авторизуйтесь"
+
+# Тестовые данные для создания объявления
+LISTING_DESCRIPTION = "Хороший товар"
+LISTING_PRICE = "600"
